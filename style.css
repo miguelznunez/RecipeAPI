@@ -1,0 +1,342 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  overflow-x: hidden;
+  color: white;
+  background-color: #1a1a1a;
+  font-family: 'Courgette', cursive;
+}
+
+.container{
+  width: 1280px;
+  margin: auto;
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0 20px;
+  font-size: 1.5rem;
+}
+
+.wrapper{
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.menu, .responsive-menu{
+  min-height: calc(100vh - 70px);
+}
+
+.menu a , .responsive-menu a{
+  color: white;
+  text-decoration: none;
+}
+
+.menu li, .responsive-menu li{
+  cursor: pointer;
+  list-style-type: none;
+  transition: 1s ease;
+  padding: 10px 25px;
+}
+
+.menu li:hover, .responsive-menu li:hover{
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.responsive-menu i{
+  font-size: 1.5rem;
+}
+
+.responsive-menu{
+  display: none;
+}
+
+.cheff{
+  padding: 20px 0;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cheff i{
+  font-size: 3.5rem;
+  color: white;
+}
+
+.cheff p{
+  text-align: center;
+}
+
+.display{ background-color: black;}
+
+.display i{
+  color: white;
+  margin-top: 20px;
+  font-size: 2.5rem;
+  transition: 1s;
+}
+
+.search{ 
+  width: 93%;
+  margin: auto;
+}
+
+.search h2{
+  padding: 10px 0;
+  font-size: 1.5rem;
+}
+
+.search input{
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 2px;
+  font-family: inherit;
+  background-color: #1a1a1a;
+}
+
+.my-recipe-cards, .saved-recipe-cards, .search-recipe-cards, .view-recipe-card{
+  overflow: hidden;
+  position: relative;
+  width: 95%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card, .big-card{
+  width: 300px;
+  height: auto;
+  margin: 10px 0;
+  transition: 1s ease;
+  background-color: #1a1a1a;
+  padding-bottom: 10px;
+}
+
+.big-card{
+  width: 700px;
+}
+
+.card p, .big-card p{
+  color:white;
+}
+
+.images, .big-image{
+  width: 100%;
+  height: 200px;
+  background-position: center;
+  background-size: cover;
+}
+
+.big-image{
+  height: 400px;
+}
+
+.name{
+  padding: 10px 10px 10px 18px;
+}
+
+.name h1{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.other, .view-other{
+  padding: 0 20px;
+}
+
+.other p{
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  padding: 5px 0;
+}
+
+.view-other p{
+  padding: 5px 0;
+}
+
+.other a{
+  color: blue;
+  text-decoration: none;
+  transition: 1.5s ease;
+}
+
+.save-btn, .del-btn{
+  text-align: right;
+  margin: 0 10px 10px 0;
+}
+
+.save-btn button, .del-btn button{
+  padding: 8px;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  transition: 1s ease;
+}
+
+.save-btn button:hover, .del-btn button:hover{
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.save-btn i, .del-btn i{
+  color: white;
+  cursor: pointer;
+  font-size: 2rem;
+  transition: 1s ease;
+}
+
+.save-btn i:active, .del-btn i:active{
+  transform: translateY(4px);
+}
+
+.save-btn a{
+  color: white;
+  text-decoration: none;
+}
+
+.add-recipe{
+  width: 95%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.box{
+  margin: 0 20px;
+}
+
+.box textarea{
+  resize: none;
+  color: white;
+  margin: 5px 0;
+  padding: 8px;
+  border: none;
+  border-radius: 2px;
+  font-family: inherit;
+  background-color: #1a1a1a;
+}
+
+.box button{
+  margin: 5px 0;
+  padding: 10px;
+  border: none;
+  color: white;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: 1s;
+}
+
+.box button:active{
+  transform: translateY(4px);
+}
+
+#recipe-img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: darkgray;
+  width: 335px;
+  height: 216px;
+  margin: 5px 0 10px 0;
+  border-radius: 2px;
+  border: 2px dotted lightgray;
+  background-color: #1a1a1a;
+}
+
+#recipe-img i{
+  padding: 10px 0;
+  font-size: 2.5rem;
+}
+
+#recipe-img input{
+  cursor: pointer;
+  text-align: center;
+  border: 1px solid white;
+}
+
+.search input{
+  margin-bottom: 10px;
+  color: white;
+}
+
+@media(max-width:1280px){
+  .container{
+    width: 100%;
+  }
+}
+
+@media(max-width:768px){
+  .wrapper{
+    grid-template-columns: 10% 90%;
+  }
+
+  .menu{
+    display: none;
+  }
+
+  .responsive-menu{
+    display: block;
+  }
+
+  .responsive-menu li{
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .cheff i{
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  .display i{
+    font-size: 1.5rem;
+  }
+
+  .card{
+    width: 100%;
+  }
+
+  .box{
+    width: 100%;
+  }
+
+  #recipe-img{
+    width: 100%;
+  }
+
+  .box textarea{
+    width: 100%;
+  }
+}
+
+@media(max-width:480px){
+  .big-image{
+    height: 200px;
+  }
+
+  .save-btn i, .del-btn i{
+    font-size: 1.5rem;
+  }
+
+  .nav, .search h2, .other p, h1{
+    font-size: 1rem;
+  }
+
+}

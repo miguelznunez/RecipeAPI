@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Saved Recipes</title>
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="nav">
+        <div>
+          <h2>Dashboard <span id="dot">.</span></h2>
+        </div>
+        <div>
+          <input type="color" value="#20b2aa" id="colorWell">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVIGATION MENU AND ALLOW USER TO VIEW SAVED RECIPES -->
+  <section>
+    <div class="container">
+
+      <!-- WRAPPER FOR CSS GRID -->
+      <div class="wrapper">
+
+        <!-- NAVIGATION MENU -->
+        <div class="menu">
+          <div class="cheff">
+            <i class="fas fa-user"></i>
+            <br>
+            <p id="myname">Miguel Nunez</p>
+          </div>
+          <a href="index.html"><li>My recipes</li></a>
+          <a href="add-recipe.html"><li>Add recipe</li></a>
+          <a href="saved-recipes.html"><li id="current">Saved recipes</li></a>
+          <a href="search-recipes.html"><li>Search recipes</li></a>
+        </div>
+
+        <!-- RESPONSIVE NAVIGATION MENU ACTIVATES AT 768px -->
+        <div class="responsive-menu">
+          <div class="cheff">
+            <i class="fas fa-user"></i>
+          </div>
+          <a href="index.html"><li><i class="fas fa-receipt"></i></li></a>
+          <a href="add-recipe.html"><li><i class="fas fa-plus-square"></i></li></a>
+          <a href="saved-recipes.html"><li class="current"><i class="fas fa-save"></i></li></a>
+          <a href="search-recipes.html"><li><i class="fas fa-search"></i></li></a>
+        </div>
+
+        <!-- ALLOW USER TO VIEW SAVED RECIPES -->
+        <div class="display">
+          <div class="search">
+            <h2>Saved recipes</h2>
+          </div>
+          <div class="saved-recipe-cards"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
