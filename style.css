@@ -32,9 +32,7 @@ body{
   grid-template-columns: 20% 80%;
 }
 
-.menu, .responsive-menu{
-  min-height: calc(100vh - 70px);
-}
+.menu, .responsive-menu{min-height: calc(100vh - 70px);}
 
 .menu a , .responsive-menu a{
   color: white;
@@ -48,17 +46,11 @@ body{
   padding: 10px;
 }
 
-.menu li:hover, .responsive-menu li:hover{
-  background-color: rgba(255, 255, 255, 0.5);
-}
+.menu li:hover, .responsive-menu li:hover{background-color: rgba(255, 255, 255, 0.5);}
 
-.responsive-menu i{
-  font-size: 1.5rem;
-}
+.responsive-menu i{font-size: 1.5rem;}
 
-.responsive-menu{
-  display: none;
-}
+.responsive-menu{display: none;}
 
 .cheff{
   padding: 20px 0;
@@ -75,9 +67,7 @@ body{
   color: white;
 }
 
-.cheff p{
-  text-align: center;
-}
+.cheff p{text-align: center;}
 
 .display{ background-color: black;}
 
@@ -120,13 +110,9 @@ body{
   padding-bottom: 10px;
 }
 
-.big-card{
-  width: 700px;
-}
+.big-card{width: 700px;}
 
-.card p, .big-card p{
-  color:white;
-}
+.card p, .big-card p{color:white;}
 
 .images, .big-image{
   width: 100%;
@@ -135,13 +121,9 @@ body{
   background-size: cover;
 }
 
-.big-image{
-  height: 400px;
-}
+.big-image{height: 400px;}
 
-.name{
-  padding: 10px 10px 10px 18px;
-}
+.name{padding: 10px 10px 10px 18px;}
 
 .name h1{
   overflow: hidden;
@@ -149,9 +131,7 @@ body{
   text-overflow: ellipsis;
 }
 
-.other, .view-other{
-  padding: 0 20px;
-}
+.other, .view-other{padding: 0 20px;}
 
 .other p{
   overflow: hidden;
@@ -160,9 +140,7 @@ body{
   padding: 5px 0;
 }
 
-.view-other p{
-  padding: 5px 0;
-}
+.view-other p{padding: 5px 0;}
 
 .other a{
   color: blue;
@@ -183,9 +161,7 @@ body{
   transition: 1s ease;
 }
 
-.save-btn button:hover, .del-btn button:hover{
-  background-color: rgba(255, 255, 255, 0.5);
-}
+.save-btn button:hover, .del-btn button:hover{background-color: rgba(255, 255, 255, 0.5);}
 
 .save-btn i, .del-btn i{
   color: white;
@@ -233,9 +209,7 @@ body{
   transition: 1s;
 }
 
-.box button:active{
-  transform: translateY(4px);
-}
+.box button:active{transform: translateY(4px);}
 
 #recipe-img{
   display: flex;
@@ -282,29 +256,19 @@ body{
   height: 220px;
 }
 
-#publish-recipe{
-  height: 40px;
-}
+#publish-recipe{height: 40px;}
 
 
 @media(max-width:1280px){
-  .container{
-    width: 100%;
-  }
+  .container{width: 100%;}
 }
 
 @media(max-width:768px){
-  .wrapper{
-    grid-template-columns: 10% 90%;
-  }
+  .wrapper{grid-template-columns: 10% 90%;}
 
-  .menu{
-    display: none;
-  }
+  .menu{display: none;}
 
-  .responsive-menu{
-    display: block;
-  }
+  .responsive-menu{display: block;}
 
   .responsive-menu li{
     padding: 10px 0;
@@ -316,38 +280,18 @@ body{
     color: white;
   }
 
-  .display i{
-    font-size: 1.5rem;
-  }
+  .display i{ font-size: 1.5rem;}
 
-  .card{
-    width: 100%;
-  }
-
-  .box{
-    width: 100%;
-  }
-
-  #recipe-img{
-    width: 100%;
-  }
-
-  .box textarea{
-    width: 100%;
+   .card, .box, #recipe-img,#name, #description, #ingredients, #instructions{
+   width: 100%;
   }
 }
 
 @media(max-width:480px){
-  .big-image{
-    height: 200px;
-  }
+  .big-image{ height: 200px;}
 
-  .save-btn i, .del-btn i{
-    font-size: 1.5rem;
-  }
+  .save-btn i, .del-btn i{ font-size: 1.5rem;}
 
-  .nav, .search h2, .other p, h1{
-    font-size: 1rem;
-  }
+  .nav, .search h2, .other p, h1{ font-size: 1rem;}
 
 }
