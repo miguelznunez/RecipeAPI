@@ -1,4 +1,5 @@
 const input = document.getElementById("search-recipes");
+const searchRecipe = document.getElementById("search-recipe");
 const fileInput = document.getElementById("myFileInput");
 const current = document.getElementById("current");
 const currentClass = document.getElementsByClassName("current")[0];
@@ -17,11 +18,8 @@ var savedRecipesArray = localStorage.getItem('recipes') ? JSON.parse(localStorag
 var searchRecipesArray = sessionStorage.getItem('search') ? JSON.parse(sessionStorage.getItem('search')) : [];
 var defaultColor = sessionStorage.getItem('color') ? JSON.parse(sessionStorage.getItem('color')) : "#20b2aa";
 
-window.addEventListener("load", startup);
-window.addEventListener("load", loadDefaultColor);
-
 // Change the color of widgets to default color at window load
-function loadDefaultColor(){
+loadDefaultColor = () => {
   if(current)
     current.style.backgroundColor = defaultColor;
   if(currentClass)
@@ -42,16 +40,20 @@ function loadDefaultColor(){
     search_recipe_cards.style.color = defaultColor;
 }
 
+window.addEventListener("load", loadDefaultColor);
+
 // Enable the use of color selection
-function startup() {
+startup = () => {
   colorWell = document.querySelector("#colorWell");
   colorWell.value = defaultColor;
   colorWell.addEventListener("input", updateFirst, false);
   colorWell.select();
 }
 
+window.addEventListener("load", startup);
+
 // Change the default color of widgets in real time
-function updateFirst(event) {
+updateFirst = (event) => {
   if(current)
     current.style.backgroundColor = event.target.value;
   if(currentClass)
@@ -83,7 +85,7 @@ searchRecipesArray.forEach(searchRecipeCardMaker);
 
 // Allow the user to click the enter key on input box
 if(input){
-  input.addEventListener('keydown', function(event){
+  input.addEventListener('keydown', (event) => {
     if(event.key == "Enter"){
       request();
     }
@@ -102,14 +104,19 @@ if(fileInput){
 }
 
 // Call publish_recipe function when clicking publish recipe button
+// JQUERY
+// if($("#publish-recipe")){
+//   $("#publish-recipe").on("click", publish_recipe);
+// }
+// NO JQUERY
 if(publishRecipeBtn){
-  publishRecipeBtn.addEventListener("click", function(){
+  publishRecipeBtn.addEventListener("click", () => {
     publish_recipe();
   });
 }
 
 // Save the data of the recipe you created in the "Add recipe" page ( in local storage )
-function publish_recipe(){
+publish_recipe = () => {
   const recipeName = document.getElementById("name");
   const description = document.getElementById("description");
   const ingredients = document.getElementById("ingredients");
@@ -136,7 +143,7 @@ function publish_recipe(){
 }
 
 // Use the data you saved in the publish_recipe function to create recipe cards for the "My recipes" page
-function myRecipeCardMaker(text){
+function myRecipeCardMaker(text) {
   if(my_recipe_cards){
     let card = document.createElement('div');
     let delBtn = document.createElement('div');
@@ -161,14 +168,14 @@ function myRecipeCardMaker(text){
     card.appendChild(delBtn);
     my_recipe_cards.appendChild(card); 
 
-    delBtn.addEventListener("click", function(){
+    delBtn.addEventListener("click", () => {
       delMyRecipe(text.img, text.name, text.description, text.ingredients, text.instructions);
     });
   }   
 }
 
 // Delete a recipe from the "My recipes" page ( by clicking the trash button )
-function delMyRecipe(img, name, description, ingredients, instructions){
+delMyRecipe = (img, name, description, ingredients, instructions) => {
   let index = myRecipesArray.findIndex(x => x.img === img && x.name === name && x.description === description && x.ingredients === ingredients && x.instructions === instructions);
   myRecipesArray.splice(index, 1);
   localStorage.setItem('myRecipes', JSON.stringify(myRecipesArray));
@@ -176,7 +183,7 @@ function delMyRecipe(img, name, description, ingredients, instructions){
 }
 
 // Save the recipe data for the "View recipe" page in session storage ( by clicking on the "view more" hyperlink)
-function view_recipe(img, name, description, ingredients, instructions){
+view_recipe = (img, name, description, ingredients, instructions) => {
   var recipe_info = {
   'img'  : img,
   'name' : name,
@@ -209,18 +216,17 @@ function viewRecipeCardMaker(text){
 }
 
 // Use the recipe API to search for recipes ( in the "Search recipes" page)
-function request(){
+request = () => {
   fetch("https://edamam-recipe-search.p.rapidapi.com/search?q="+input.value+"", {
 	"method": "GET",
 	"headers": {
     //GO TO RAPIDAPI.COM AND LOOK FOR THE EDAMAN RECIPE SEARCH AND DIET API TO GET YOUR API KEY. COPY AND PASTE IT BELOW!
-		"x-rapidapi-key": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+		"x-rapidapi-key": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
 		"x-rapidapi-host": "edamam-recipe-search.p.rapidapi.com"
 	  }
   })
 
   .then(response => {
-    console.log(response);
     if(response.ok)
       return response.json();
     else
@@ -233,7 +239,7 @@ function request(){
 }
 
 // Save the recipe data returned by the recipe API in session storage
-function recipe_card(data){
+recipe_card = (data) => {
   searchRecipesArray = [];
   search_recipe_cards.innerHTML = '';
   sessionStorage.setItem('search', JSON.stringify(searchRecipesArray));
@@ -280,7 +286,7 @@ function searchRecipeCardMaker(text){
 }
 
 // Save the data of a recipe from the search you made in local storage ( by clicking the save button )
-function save_recipe(img, name, calories, cautions, dietLabels, healthLabels, ingredients, url){
+save_recipe = (img, name, calories, cautions, dietLabels, healthLabels, ingredients, url) => {
   var recipe_info = {
     'img'  : img,
     'name' : name,
@@ -320,7 +326,7 @@ function savedRecipeCardMaker(text){
 }
 
 // delete a recipe card from the "Saved recipes" page ( by clicking the trash button )
-function delSavedRecipe(img, name, calories, cautions, dietLabels, healthLabels, ingredients, url){
+delSavedRecipe = (img, name, calories, cautions, dietLabels, healthLabels, ingredients, url) => {
   let index = savedRecipesArray.findIndex(x => x.img === img && x.name === name && x.calories === calories && x.cautions === cautions && x.dietLabels === dietLabels && x.url === url);
   savedRecipesArray.splice(index, 1);
   localStorage.setItem('recipes', JSON.stringify(savedRecipesArray));
