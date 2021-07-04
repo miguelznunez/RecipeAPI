@@ -57,13 +57,13 @@ updateFirst = (event) => {
   if(current)
     current.style.backgroundColor = event.target.value;
   if(currentClass)
-    currentClass.style.color = defaultColor;
+    currentClass.style.color = event.target.value;
   if(dot)
-    dot.style.color = defaultColor;
+    dot.style.color = event.target.value;
   if(myname)
-    myname.style.color = defaultColor;
+    myname.style.color = event.target.value;
   if(view_recipe_card)
-    view_recipe_card.style.color = defaultColor;
+    view_recipe_card.style.color = event.target.value;
   if(publishRecipeBtn)
     publishRecipeBtn.style.backgroundColor = event.target.value;
   if(my_recipe_cards)
