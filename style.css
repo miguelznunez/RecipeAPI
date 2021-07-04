@@ -45,7 +45,7 @@ body{
   cursor: pointer;
   list-style-type: none;
   transition: 1s ease;
-  padding: 10px 25px;
+  padding: 10px;
 }
 
 .menu li:hover, .responsive-menu li:hover{
@@ -70,6 +70,7 @@ body{
 }
 
 .cheff i{
+  padding-bottom: 15px;
   font-size: 3.5rem;
   color: white;
 }
@@ -80,13 +81,6 @@ body{
 
 .display{ background-color: black;}
 
-.display i{
-  color: white;
-  margin-top: 20px;
-  font-size: 2.5rem;
-  transition: 1s;
-}
-
 .search{ 
   width: 93%;
   margin: auto;
@@ -96,13 +90,14 @@ body{
   padding: 10px 0;
   font-size: 1.5rem;
 }
-
 .search input{
   width: 100%;
   padding: 8px;
   border: none;
-  border-radius: 2px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
   font-family: inherit;
+  color: white;
   background-color: #1a1a1a;
 }
 
@@ -212,12 +207,8 @@ body{
   width: 95%;
   margin: auto;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-}
-
-.box{
-  margin: 0 20px;
 }
 
 .box textarea{
@@ -252,8 +243,8 @@ body{
   align-items: center;
   flex-direction: column;
   color: darkgray;
-  width: 335px;
-  height: 216px;
+  width: 350px;
+  height: 220px;
   margin: 5px 0 10px 0;
   border-radius: 2px;
   border: 2px dotted lightgray;
@@ -271,10 +262,30 @@ body{
   border: 1px solid white;
 }
 
-.search input{
-  margin-bottom: 10px;
-  color: white;
+#name{
+  width: 350px;
+  height: 40px;
 }
+
+#description{
+  width: 350px;
+  height: 220px;
+}
+
+#ingredients{
+  width: 350px;
+  height: 220px;
+}
+
+#instructions{
+  width: 350px;
+  height: 220px;
+}
+
+#publish-recipe{
+  height: 40px;
+}
+
 
 @media(max-width:1280px){
   .container{
