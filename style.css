@@ -14,7 +14,7 @@ body{
 }
 
 .container{
-  width: 1280px;
+  width: 1600px;
   margin: auto;
 }
 
@@ -22,7 +22,7 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 70px;
+  min-height: 80px;
   padding: 0 20px;
   font-size: 1.5rem;
 }
@@ -259,7 +259,7 @@ body{
 #publish-recipe{height: 40px;}
 
 
-@media(max-width:1280px){
+@media(max-width:1600px){
   .container{width: 100%;}
 }
 
