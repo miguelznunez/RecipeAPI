@@ -13,23 +13,18 @@ body{
   font-family: 'Courgette', cursive;
 }
 
-.container{
-  width: 1600px;
-  margin: auto;
-}
-
 .nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 80px;
+  height: 70px;
   padding: 0 20px;
   font-size: 1.5rem;
 }
 
 .wrapper{
   display: grid;
-  grid-template-columns: 20% 80%;
+  grid-template-columns: 300px 1fr;
 }
 
 .menu, .responsive-menu{min-height: calc(100vh - 70px);}
@@ -52,7 +47,7 @@ body{
 
 .responsive-menu{display: none;}
 
-.cheff{
+.user{
   padding: 20px 0;
   color: white;
   display: flex;
@@ -61,25 +56,23 @@ body{
   flex-direction: column;
 }
 
-.cheff i{
+.user i{
   padding-bottom: 15px;
   font-size: 3.5rem;
   color: white;
 }
 
-.cheff p{text-align: center;}
+.user p{text-align: center;}
 
-.display{ background-color: black;}
-
-.search{ 
-  width: 93%;
-  margin: auto;
+.display{ 
+  padding: 20px;
+  background-color: black;
 }
 
 .search h2{
-  padding: 10px 0;
   font-size: 1.5rem;
 }
+
 .search input{
   width: 100%;
   padding: 8px;
@@ -91,20 +84,20 @@ body{
   background-color: #1a1a1a;
 }
 
-.my-recipe-cards, .saved-recipe-cards, .search-recipe-cards, .view-recipe-card{
+.my-recipe-cards,
+.saved-recipe-cards,
+.search-recipe-cards,
+.view-recipe-card{
   overflow: hidden;
   position: relative;
-  width: 95%;
-  margin: auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  gap: 20px;
 }
 
 .card, .big-card{
   width: 300px;
   height: auto;
-  margin: 10px 0;
   transition: 1s ease;
   background-color: #1a1a1a;
   padding-bottom: 10px;
@@ -180,10 +173,8 @@ body{
 }
 
 .add-recipe{
-  width: 95%;
-  margin: auto;
   display: flex;
-  justify-content: space-evenly;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
@@ -258,9 +249,44 @@ body{
 
 #publish-recipe{height: 40px;}
 
+#snackbar-success{
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 1; /* Add a z-index if needed */
+  left: 50%; /* Center the snackbar */
+  bottom: 30px; /* 30px from the bottom */
+}
 
-@media(max-width:1600px){
-  .container{width: 100%;}
+#snackbar-success.show{
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
 }
 
 @media(max-width:768px){
@@ -275,7 +301,7 @@ body{
     text-align: center;
   }
 
-  .cheff i{
+  .user i{
     font-size: 1.5rem;
     color: white;
   }
@@ -293,5 +319,4 @@ body{
   .save-btn i, .del-btn i{ font-size: 1.5rem;}
 
   .nav, .search h2, .other p, h1{ font-size: 1rem;}
-
 }
