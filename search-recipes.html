@@ -25,56 +25,55 @@
     </div>
   </header>
 
-  <!-- NAVIGATION MENU AND ALLOW USER TO SEARCH FOR RECIPES -->
-  <section>
-    <div class="container">
+  <!-- WRAPPER FOR CSS GRID -->
+  <div class="wrapper">
 
-      <!-- WRAPPER FOR CSS GRID -->
-      <div class="wrapper">
-
-        <!-- NAVIGATION MENU -->
-        <div class="menu">
-          <div class="cheff">
-            <i class="fas fa-user"></i>
-            <p id="myname">Miguel Nunez</p>
-          </div>
-          <a href="index.html">
-            <li><i class="fas fa-receipt" id="receipt" style="margin-right: 10px;"></i>My recipes</li>
-          </a>
-          <a href="add-recipe.html">
-            <li><i class="fas fa-plus-square" id="square" style="margin-right: 10px;"></i>Add recipe</li>
-          </a>
-          <a href="saved-recipes.html">
-            <li><i class="fas fa-save" id="save" style="margin-right: 10px;"></i>Saved recipes</li>
-          </a>
-          <a href="search-recipes.html">
-            <li id="current"><i class="fas fa-search" id="search" style="margin-right: 10px;"></i>Search recipes</li>
-          </a>
-        </div>
-
-        <!-- RESPONSIVE NAVIGATION MENU ACTIVATES AT 768px -->
-        <div class="responsive-menu">
-          <div class="cheff">
-            <i class="fas fa-user"></i>
-          </div>
-          <a href="index.html"><li><i class="fas fa-receipt"></i></li></a>
-          <a href="add-recipe.html"><li><i class="fas fa-plus-square"></i></li></a>
-          <a href="saved-recipes.html"><li><i class="fas fa-save"></i></li></a>
-          <a href="search-recipes.html"><li class="current"><i class="fas fa-search"></i></li></a>
-        </div>
-
-        <!-- ALLOW USER TO SEARCH FOR RECIPES -->
-        <div class="display">
-          <div class="search">
-            <h2>Search recipes</h2>
-            <input id="search-recipes" type="text" placeholder="Search recipes...">
-          </div>
-          <div class="search-recipe-cards"></div>
-        </div>
-
+    <!-- NAVIGATION MENU -->
+    <div class="menu">
+      <div class="user">
+        <i class="fas fa-user"></i>
+        <p id="myname">Miguel Nunez</p>
       </div>
+      <a href="index.html">
+        <li><i class="fas fa-receipt" id="receipt" style="margin-right: 10px;"></i>My recipes</li>
+      </a>
+      <a href="add-recipe.html">
+        <li><i class="fas fa-plus-square" id="square" style="margin-right: 10px;"></i>Add recipe</li>
+      </a>
+      <a href="saved-recipes.html">
+        <li><i class="fas fa-save" id="save" style="margin-right: 10px;"></i>Saved recipes</li>
+      </a>
+      <a href="search-recipes.html">
+        <li id="current"><i class="fas fa-search" id="search" style="margin-right: 10px;"></i>Search recipes</li>
+      </a>
     </div>
-  </section>
+
+    <!-- RESPONSIVE NAVIGATION MENU ACTIVATES AT 768px -->
+    <div class="responsive-menu">
+      <div class="user">
+        <i class="fas fa-user"></i>
+      </div>
+      <a href="index.html"><li><i class="fas fa-receipt"></i></li></a>
+      <a href="add-recipe.html"><li><i class="fas fa-plus-square"></i></li></a>
+      <a href="saved-recipes.html"><li><i class="fas fa-save"></i></li></a>
+      <a href="search-recipes.html"><li class="current"><i class="fas fa-search"></i></li></a>
+    </div>
+
+    <!-- ALLOW USER TO SEARCH FOR RECIPES -->
+    <div class="display">
+      <div class="search">
+        <h2>Search recipes</h2>
+        <br>
+        <input id="search-recipes" type="text" placeholder="Search recipes...">
+        <br><br>
+      </div>
+      <div class="search-recipe-cards"></div>
+    </div>
+
+  </div>  
+
+  <!-- OUTPUT SAVED MESSAGE -->
+  <div id="snackbar-success">Recipe has been saved!</div>
 
   <script src="script.js"></script>
 </body>
