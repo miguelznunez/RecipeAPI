@@ -26,73 +26,68 @@
     </div>
   </header>
 
-  <!-- NAVIGATION MENU AND ALLOW USER TO CREATE A RECIPE -->
-  <section>
-    <div class="container">
+  <!-- WRAPPER FOR CSS GRID -->
+  <div class="wrapper">
 
-      <!-- WRAPPER FOR CSS GRID -->
-      <div class="wrapper">
-
-        <!-- NAVIGATION MENU -->
-        <div class="menu">
-          <div class="cheff">
-            <i class="fas fa-user"></i>
-            <p id="myname">Miguel Nunez</p>
-          </div>
-          <a href="index.html">
-            <li><i class="fas fa-receipt" id="receipt" style="margin-right: 10px;"></i>My recipes</li>
-          </a>
-          <a href="add-recipe.html">
-            <li id="current"><i class="fas fa-plus-square" id="square" style="margin-right: 10px;"></i>Add recipe</li>
-          </a>
-          <a href="saved-recipes.html">
-            <li><i class="fas fa-save" id="save" style="margin-right: 10px;"></i>Saved recipes</li>
-          </a>
-          <a href="search-recipes.html">
-            <li><i class="fas fa-search" id="search" style="margin-right: 10px;"></i>Search recipes</li>
-          </a>
-        </div>
-
-        <!-- RESPONSIVE NAVIGATION MENU ACTIVATES AT 768px -->
-        <div class="responsive-menu">
-          <div class="cheff">
-            <i class="fas fa-user"></i>
-          </div>
-          <a href="index.html"><li><i class="fas fa-receipt"></i></li></a>
-          <a href="add-recipe.html"><li class="current"><i class="fas fa-plus-square"></i></li></a>
-          <a href="saved-recipes.html"><li><i class="fas fa-save"></i></li></a>
-          <a href="search-recipes.html"><li><i class="fas fa-search"></i></li></a>
-        </div>
-
-        <!-- ALLOW USER TO CREATE A RECIPE  -->
-        <div class="display">
-          <div class="search">
-            <h2>Add recipe</h2>
-          </div>
-          <div class="add-recipe">
-            <div class="box">
-              <div id="recipe-img">
-                <i class="fas fa-image"></i>
-                <input type="file" id="myFileInput" accept=".jpg, .jpeg, .png">
-              </div>
-              <textarea name="" id="name" placeholder="Name of the recipe"></textarea>
-              <br>
-              <textarea name="" id="description" placeholder="Description of dish"></textarea>
-            </div>
-            <div class="box">
-              <textarea name="" id="ingredients" placeholder="Ingredients"></textarea>
-              <br>
-              <textarea name="" id="instructions" placeholder="How to make it"></textarea>
-              <br>
-              <button id="publish-recipe">Publish recipe</button>
-            </div>
-          </div>
-        </div>
-
-      </div> 
+    <!-- NAVIGATION MENU -->
+    <div class="menu">
+      <div class="user">
+        <i class="fas fa-user"></i>
+        <p id="myname">Miguel Nunez</p>
+      </div>
+      <a href="index.html">
+        <li><i class="fas fa-receipt" id="receipt" style="margin-right: 10px;"></i>My recipes</li>
+      </a>
+      <a href="add-recipe.html">
+        <li id="current"><i class="fas fa-plus-square" id="square" style="margin-right: 10px;"></i>Add recipe</li>
+      </a>
+      <a href="saved-recipes.html">
+        <li><i class="fas fa-save" id="save" style="margin-right: 10px;"></i>Saved recipes</li>
+      </a>
+      <a href="search-recipes.html">
+        <li><i class="fas fa-search" id="search" style="margin-right: 10px;"></i>Search recipes</li>
+      </a>
     </div>
-  </section>
-  
+
+    <!-- RESPONSIVE NAVIGATION MENU ACTIVATES AT 768px -->
+    <div class="responsive-menu">
+      <div class="user">
+        <i class="fas fa-user"></i>
+      </div>
+      <a href="index.html"><li><i class="fas fa-receipt"></i></li></a>
+      <a href="add-recipe.html"><li class="current"><i class="fas fa-plus-square"></i></li></a>
+      <a href="saved-recipes.html"><li><i class="fas fa-save"></i></li></a>
+      <a href="search-recipes.html"><li><i class="fas fa-search"></i></li></a>
+    </div>
+
+    <!-- ALLOW USER TO CREATE A RECIPE  -->
+    <div class="display">
+      <div class="search">
+        <h2>Add recipe</h2>
+        <br>
+      </div>
+      <div class="add-recipe">
+        <div class="box">
+          <div id="recipe-img">
+            <i class="fas fa-image" style="color: white;"></i>
+            <input type="file" id="myFileInput" accept=".jpg, .jpeg, .png">
+          </div>
+          <textarea name="" id="name" placeholder="Name of the recipe"></textarea>
+          <br>
+          <textarea name="" id="description" placeholder="Description of dish"></textarea>
+        </div>
+        <div class="box">
+          <textarea name="" id="ingredients" placeholder="Ingredients"></textarea>
+          <br>
+          <textarea name="" id="instructions" placeholder="How to make it"></textarea>
+          <br>
+          <button id="publish-recipe">Publish recipe</button>
+        </div>
+      </div>
+    </div>
+
+  </div> 
+
   <script src="script.js"></script>
 </body>
 </html>
